@@ -1,0 +1,12 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    email:
+        label: Email
+        type: email
+        span: auto
+    telephone:
+        label: Telephone
+        span: auto
