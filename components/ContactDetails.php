@@ -12,8 +12,8 @@ class ContactDetails extends ComponentBase
     /**
      * @var string
      */
-    private $email;
-    private $telephone;
+    protected $email;
+    protected $telephone;
 
     public function componentDetails()
     {
@@ -30,7 +30,7 @@ class ContactDetails extends ComponentBase
      */
     public function email(): string
     {
-        return $this->email;
+        return $this->email !== null ? $this->email : '';
     }
 
     /**
@@ -40,7 +40,7 @@ class ContactDetails extends ComponentBase
      */
     public function telephone(): string
     {
-        return $this->telephone;
+        return $this->telephone !== null ? $this->telephone : '';
     }
 
     public function onRun()
