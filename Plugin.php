@@ -7,6 +7,7 @@ namespace DamianLewis\Contact;
 use DamianLewis\Contact\Components\ContactDetails;
 use DamianLewis\Contact\Models\Settings;
 use System\Classes\PluginBase;
+use System\Classes\SettingsManager;
 
 class Plugin extends PluginBase
 {
@@ -32,7 +33,7 @@ class Plugin extends PluginBase
         return [
             'damianlewis.contact.access_settings' => [
                 'tab' => 'Contact',
-                'label' => 'Manage the contact settings.'
+                'label' => 'Access the contact settings.'
             ],
         ];
     }
@@ -42,11 +43,11 @@ class Plugin extends PluginBase
         return [
             'settings' => [
                 'label' => 'Contact Details',
-                'description' => 'Manage the contact details used within the site.',
+                'description' => 'Manage the contact details.',
                 'icon' => 'icon-address-card',
-                'permissions' => ['damianlewis.contact.access_settings'],
                 'class' => Settings::class,
-                'order' => 999
+                'category' => SettingsManager::CATEGORY_MYSETTINGS,
+                'permissions' => ['damianlewis.contact.access_settings']
             ]
         ];
     }
